@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Homework 01 Submission</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem auto;
+      max-width: 1100px;
+      color: #1f2328;
+      line-height: 1.6;
+    }
+
+    h1 {
+      border-bottom: 2px solid #d0d7de;
+      padding-bottom: 0.5rem;
+    }
+
+    .meta {
+      color: #57606a;
+      margin-bottom: 1.5rem;
+    }
+
+    .note {
+      background: #fff8c5;
+      border-left: 4px solid #d4a72c;
+      padding: 0.75rem 1rem;
+      margin: 1rem 0;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    @media print {
+      body {
+        margin: 0.5in;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>STAT 432 - Homework 01</h1>
+  <div class='meta'>Submission artifact generated from the completed solution script.</div>
+  <div class='note'>This file is the actual submitted homework report in HTML format, matching the repository's weekly
+    homework naming convention.</div>
+
+  <h2>Question 1</h2>
+  <pre
+    style='white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.5; background: #f6f8fa; padding: 1.2rem; border-radius: 10px; border: 1px solid #d0d7de;'>Q1
+Shape of X_aug: (100, 6)
+Rank of X_aug: 6
+  Parameter  True Beta  Estimated Beta  Difference
+0    beta_0        3.0        2.973066   -0.026934
+1    beta_1        1.4        1.324020   -0.075980
+2    beta_2       -0.9       -0.841489    0.058511
+3    beta_3        0.7        0.720435    0.020435
+4    beta_4        0.0       -0.083144   -0.083144
+5    beta_5        1.1        1.165055    0.065055
+RMSE: 0.6463397227026199
+||X^T r||_inf = 1.485143451574447e-12</pre>
+
+  <h2>Question 2</h2>
+  <p>The log-likelihood profile for the coefficient perturbation is shown below.</p>
+  <img src="q2_profile.png" alt="Question 2 log-likelihood profile"
+    style="max-width: 100%; height: auto; border: 1px solid #d0d7de; margin: 1rem 0; display: block;">
+
+  <pre
+    style='white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.5; background: #f6f8fa; padding: 1.2rem; border-radius: 10px; border: 1px solid #d0d7de;'>Derivative of log-likelihood w.r.t. sigma^2:
+(RSS - n*v)/(2*v**2)
+Solution: [RSS/n]
+MLE of sigma^2: 0.4177550371432996
+Unbiased estimate of sigma^2: 0.44442025228010595
+Maximum log-likelihood occurs at t = -0.012626262626262541 with value -98.27631499165946</pre>
+
+  <h2>Question 3</h2>
+  <p>The objective function plot used for the non-convex optimization exercise is shown below.</p>
+  <img src="q3_objective.png" alt="Question 3 objective function plot"
+    style="max-width: 100%; height: auto; border: 1px solid #d0d7de; margin: 1rem 0; display: block;">
+
+  <pre
+    style='white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.5; background: #f6f8fa; padding: 1.2rem; border-radius: 10px; border: 1px solid #d0d7de;'>Optimization results:
+x0 = -15: x* = -32.64911064067351, f(x*) = -390.38577025077666, converged = True, |f'(x*)| = 2.842170943040401e-14
+x0 = 0: x* = 2.3499670888150805, f(x*) = -175.86262017122644, converged = True, |f'(x*)| = 8.126811246289556e-06
+Different starting points can converge to different local minima because the function is non-convex. More evidence would be needed before claiming a global minimum.</pre>
+
+  <h2>Question 4</h2>
+  <pre
+    style='white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.5; background: #f6f8fa; padding: 1.2rem; border-radius: 10px; border: 1px solid #d0d7de;'>Estimated beta from X_aug: [ 2.97306594  1.32402032 -0.84148921  0.7204349  -0.08314353  1.16505507]
+Estimated beta from X_plus: [-1329.74301559  1331.06013906]
+RMSE from X_aug: 0.6463397227026199
+RMSE from X_plus: 0.633955826689794
+Condition number of X_aug: 1.4525e+00
+Condition number of X_plus: 2.0340e+04
+Estimated beta from X_plus with y_star: [-1339.74301559  1341.06013906]
+Max Absolute Difference: 2.351165e-03
+RMS Difference: 9.749803e-04</pre>
+
+  <h2>Question 5</h2>
+  <pre
+    style='white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.5; background: #f6f8fa; padding: 1.2rem; border-radius: 10px; border: 1px solid #d0d7de;'>Shape of df: (24, 5)
+observation_id        str
+group                 str
+x1                float64
+x2                float64
+response          float64
+dtype: object
+Duplicated identifiers: 0
+observation_id    0
+group             0
+x1                0
+x2                0
+response          3
+dtype: int64
+       mean_response  mean_feature_sum  count
+group                                        
+A           5.600000          3.600000      7
+B           7.602857          4.928571      7
+C           7.997143          6.585714      7
+   observation_id group  response  feature_sum
+21         obs-22     C      9.24          6.6
+15         obs-16     B      9.00          5.2
+13         obs-14     B      8.66          5.0</pre>
+
+  <h2>Question 6</h2>
+  <pre
+    style='white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.5; background: #f6f8fa; padding: 1.2rem; border-radius: 10px; border: 1px solid #d0d7de;'>The 39 million daily records are not independent observations because repeated observations from the same person are correlated. Participants differ in how many days they contribute, and averaging all days thus weights people unequally.
+BYOD and WEAR groups differ in socioeconomic and access factors, so the comparison does not establish causation.
+A very large dataset can still be biased if the sample is selected or if only some people contribute many days, so the naive average of all recorded days may not represent the true US adult target.</pre>
+</body>
+
+</html>
